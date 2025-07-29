@@ -1,104 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>My Resume</title>
-</head>
-<body>
-    <h1>Linda Paul Ndlovu</h1>
-<img src="./assets/images/me.png" height="200" alt="picture of me">
-	
-	<h2>Summary</h2>	
-<p>Experienced IT professional with a strong background in software support, database management, and software testing, seeking to leverage over a decade of hands-on experience in help-desk support, software testing, and development. Proficient in SQL, database analysis, and JavaScript integration, aiming to contribute to a dynamic team and drive innovative solutions to enhance business processes and client satisfaction. Passionate about continuous learning and currently expanding skills in data analysis and business intelligence.
-</p>
-<hr/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linda Paul Ndlovu - Resume</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-<h2>Employment History</h2>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f1f1f1;
+        color: #333;
+        line-height: 1.7;
+        font-size: 16px; /* was previously 14px or undefined */
+        min-width: 1100px;
+      }
 
-<h4>Coherent Software Solutions: 
-February 2014 - Current </h4>
-<ul>
+      .resume {
+        display: table;
+        width: 100%;
+        max-width: 1100px;
+        margin: 40px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        table-layout: fixed;
+      }
 
-    <h4>2014 – 2016 (Help-desk Tier 1-2)</h4> 
+      .sidebar {
+        display: table-cell;
+        width: 352px;
+        background: #15283e;
+        color: #fff;
+        padding: 30px 20px;
+        vertical-align: top;
+      }
 
-<ul>
-  
-    <li>Received and logged help desk calls.</li>
-	<li>Provided hardware support remotely and recommended necessary hardware upgrades.</li>
-</ul>
-</br>
+      .main-content header h1 {
+        font-size: 38px; /* was 28px */
+        margin-bottom: 12px;
+        color: #15283e;
+      }
 
-<h4>2016 – 2023 (Senior Tier 3 Supervisor/ Junior Software Tester)</h4>
-<ul>
+      .sidebar h2 {
+        font-size: 14px; /* was 18px */
+        margin-bottom: 18px;
+        color: rgb(70, 132, 182);
+      }
+      .main-content h2 {
+        font-size: 22px; /* was 18px */
+        margin-bottom: 18px;
+        color: rgb(64, 108, 144);
+      }
 
-    <li>Installed and maintained company POS software.</li>	
-<li>	Attended to escalated tickets from help-desk tier 3 supervisors.</li>
-<li>	Monitored and repaired client databases using SQL commands.</li>
-    <li>	Performed database analysis and audits for clients.</li>
-        <li>	Trained new employees and interns in the company.</li>
-            <li>	Tested and logged software bugs.</li></ul>
-            <br/>
+      .main-content p,
+      li {
+        font-size: 20px; /* was 14px */
+        margin-bottom: 10px; /* increase spacing slightly */
+      }
 
+      .sidebar p,
+      li {
+        font-size: 18px; /* was 14px */
+        margin-bottom: 10px; /* increase spacing slightly */
+      }
 
-<h4>2023 June – 2023 Oct (Special Projects)</h4>
-<ul>
+      .sidebar .section {
+        margin-bottom: 40px;
+      }
 
+      .main-content header {
+        margin-bottom: 30px;
+      }
 
-<li>	Conducted menu maintenance using SQL for efficient changes.</li>
-<li>	Corresponded with clients, addressing and resolving concerns or queries promptly to meet deadlines.</li>
-    <li>	Troubleshot and simplified the menu maintenance process through SQL commands.</li>
+      .main-content header h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        color: #44484d;
+      }
 
-</ul>
+      .contact {
+        font-size: 14px;
+        color: #4b5563;
+      }
 
-<br/>
-<h4>2023 Nov – Current (Internal Developer)</h4> 
-<ul>
+      .job-title {
+        font-weight: bold;
+        margin-top: 10px;
+      }
 
-<li>Working as an integration developer using JavaScript.</li>	
-<li>Integrated software solutions including JotForm, Jira, and Zapier.</li>
-</ul>
-</ul>
-<hr/>
-<h2>Education</h2>
-<p>
-<ul>
-    <strong>2023 Udemy:</strong>
- SQL – MySQL for Data Analytics and Business Intelligence.
+      .company {
+        font-style: italic;
+        color: #555;
+      }
 
-<br/>
-<br/>
+      .date-location {
+        font-size: 13px;
+        color: #777;
+      }
 
-<strong>2015– 2015	IT Certification Academy: </strong>
-Information Technology Type of study.
+      ul {
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
 
-<br/>
-<br/>
-<strong>2012 – 2014 PC Training & Business College:</strong>
- Information Technology Type of study.
+      .skills-grid {
+        display: flex;
+        flex-direction: column;
+      }
 
-</ul>
-</ul>
+      .skills-grid div {
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
 
-<hr/>
+      .bold {
+        font-weight: bold;
+      }
 
-<h2>Skills</h2>
-<ul>
-    <li>SQL and Database Management ⭐️⭐️⭐️</li>
-   <li>Integration Development ⭐️⭐️⭐️⭐️</li> 
-   <li>Software Support and Testing ⭐️⭐️⭐️⭐️⭐️</li> 
-   <li>Team Leadership and Training ⭐️⭐️⭐️⭐️⭐️</li>
-   <li>Problem Solving and Process Optimization ⭐️⭐️⭐️⭐️⭐️</li> 
-</ul>
-<hr/>
-<center><a href="./contact.html">Contact Me</a> 
-<strong>|</strong>
-<a href="./hobbies.html">Know More About Me</a></center>
+      @media print {
+        body {
+          background: #fff;
+        }
 
-<hr/>
-<footer>
-    <p>&copy; 2024 Linda Paul Ndlovu. All Rights Reserved.</p>
-</footer>
-</body>
+        .resume {
+          box-shadow: none;
+          margin: 0 auto;
+        }
+
+        .sidebar,
+        .main-content {
+          padding: 20px;
+        }
+
+        @page {
+          size: A4;
+          margin: 10mm;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume">
+      <div class="sidebar">
+        <div class="section">
+          <h2><u>PERSONAL</u></h2>
+          <p><span class="bold">Name:</span> Linda Paul Ndlovu</p>
+          <p><span class="bold">Phone:</span> 078 731 8290</p>
+          <p><span class="bold">Email:</span> paulndlovu20@gmail.com</p>
+          <p><span class="bold">Location:</span> Midrand, Gauteng</p>
+          <p><span class="bold">Nationality:</span> South African</p>
+        </div>
+
+        <div class="section">
+          <h2><u>EDUCATION & CERTIFICATIONS</u></h2>
+          <div class="skills-grid">
+            <div>
+              2023 — Udemy: SQL – MySQL for Data Analytics and Business
+              Intelligence.<br /><br />
+              Progress status: Course Completed.
+            </div>
+            <div>
+              2015 — IT Certification Academy: Information Technology (Part-time
+              study)<br /><br />
+              Credentials:<br />
+              • National Certificate Information Technology: System Support<br />
+              • Microsoft Certified Solutions Expert<br />
+              • Microsoft Certified Professional<br />
+              • Microsoft Certified Solutions Associate<br />
+              Progress status: Diploma Completed.
+            </div>
+            <div>
+              2012 – 2014 — PC Training & Business College: Information
+              Technology (Full-time study)<br /><br />
+              Relevant subjects: Networking, E-Commerce, Life Skills,
+              Information Systems, Visual Basics, Web Technology, Business
+              Communications, Java, Database Systems, Quantitative Techniques,
+              IT Project Management<br />
+              Progress status: Diploma Completed.
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2><u>KEY SKILLS</u></h2>
+          <div class="skills-grid">
+            <div>✔ POS Software Installation & Support</div>
+            <div>✔ SQL Database Analysis & Troubleshooting</div>
+            <div>✔ Ticket Management & Escalation (Tier 1–3)</div>
+            <div>✔ Remote Support & Network Troubleshooting</div>
+            <div>✔ JavaScript Integration (JotForm, Jira, Zapier)</div>
+            <div>✔ Client Training & Documentation</div>
+            <div>✔ Printer Support & On-site Installation</div>
+            <div>✔ Windows & Linux Environments</div>
+            <div>✔ MS SQL Stack, MySQL, HTML/CSS</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2><u>REFERENCES</u></h2>
+          <p>
+            <span class="bold">Mr. N Withers </span><br />Senior Software
+            Tester, Cosoft<br />071 687 9587 / 086 094 4155
+          </p>
+          <p>
+            <span class="bold">Ms. N Mashabane </span><br />Colleague, Cosoft<br />082
+            697 4622 / 086 094 4155
+          </p>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <header>
+          <h1>Linda Paul Ndlovu</h1>
+          <p class="contact">
+            Internal Integration Developer | Noordwyk, Midrand
+          </p>
+        </header>
+
+        <section>
+          <h2><u>PROFILE</u></h2>
+          <p>
+            Dedicated and technically skilled IT professional with over a decade
+            of hands-on experience in POS software support, help-desk
+            operations, and database troubleshooting. Seeking to join a
+            forward-thinking team as a Cloud POS Support Engineer. Known for my
+            problem-solving mindset, strong communication skills, and ability to
+            work both independently and collaboratively in high-pressure
+            environments.
+          </p>
+        </section>
+
+        <section>
+          <br />
+          <h2><u>EMPLOYMENT HISTORY</u></h2>
+
+          <p class="job-title">Internal Integration Developer</p>
+          <p class="company">Coherent Software Solutions</p>
+          <p class="date-location">Nov 2023 – Present</p>
+          <ul>
+            <li>
+              Developed integrations using JavaScript between JotForm, Jira, and
+              Testim.
+            </li>
+            <li>
+              Streamlined support processes through automation (e.g.,
+              Zapier-based workflows).
+            </li>
+          </ul>
+
+          <p class="job-title">Special Projects – POS Menu & SQL Maintenance</p>
+          <p class="date-location">Jun 2023 – Oct 2023</p>
+          <ul>
+            <li>
+              Managed menu configurations across client databases using SQL
+              scripting.
+            </li>
+            <li>
+              Optimized support response by simplifying complex menu structures.
+            </li>
+            <li>
+              Liaised directly with clients to troubleshoot and resolve POS menu
+              issues.
+            </li>
+          </ul>
+
+          <p class="job-title">
+            Senior Tier 3 Supervisor & Junior Software Tester
+          </p>
+          <p class="date-location">2016 – 2023</p>
+          <ul>
+            <li>
+              Oversaw escalated tickets and conducted advanced POS system
+              troubleshooting.
+            </li>
+            <li>
+              Led database repairs and audits, identifying trends and systemic
+              issues.
+            </li>
+            <li>Conducted internal training sessions for new support staff.</li>
+            <li>
+              Logged and tested software bugs, contributing to product
+              improvement.
+            </li>
+          </ul>
+
+          <p class="job-title">Help-Desk Support (Tier 1–2)</p>
+          <p class="date-location">2014 – 2016</p>
+          <ul>
+            <li>
+              Provided first-line support for hardware and software issues.
+            </li>
+            <li>
+              Logged calls, diagnosed issues, and escalated where necessary.
+            </li>
+            <li>
+              Advised on hardware upgrades and performed basic networking
+              support.
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </body>
 </html>
