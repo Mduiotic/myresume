@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linda Paul Ndlovu - Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         box-sizing: border-box;
@@ -11,299 +15,531 @@
         padding: 0;
       }
 
+      :root {
+        --navy: #0f1e2e;
+        --navy-mid: #1a2f45;
+        --steel: #2c4a63;
+        --accent: #c8a96e;
+        --accent-light: #e8d5b0;
+        --light-bg: #f7f5f2;
+        --text-dark: #1e1e1e;
+        --text-mid: #4a4a4a;
+        --text-muted: #888;
+        --rule: #d6cfc5;
+      }
+
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: #f1f1f1;
-        color: #333;
-        line-height: 1.7;
-        font-size: 16px;
-        min-width: 1100px;
-      }
-
-      .resume {
-        display: table;
-        width: 100%;
-        max-width: 1100px;
-        margin: 40px auto;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        table-layout: fixed;
-      }
-
-      .sidebar {
-        display: table-cell;
-        width: 352px;
-        background: #15283e;
-        color: #fff;
-        padding: 30px 20px;
-        vertical-align: top;
-      }
-
-      .main-content header h1 {
-        font-size: 38px;
-        margin-bottom: 10px;
-        color: #44484d;
-      }
-
-      .sidebar h2 {
-        font-size: 14px;
-        margin-bottom: 18px;
-        color: rgb(70, 132, 182);
-      }
-
-      .main-content h2 {
-        font-size: 22px;
-        margin-bottom: 18px;
-        color: rgb(64, 108, 144);
-      }
-
-      .main-content p,
-      li {
+        font-family: "DM Sans", sans-serif;
+        background: #e8e4df;
+        color: var(--text-dark);
         font-size: 15px;
-        margin-bottom: 10px;
+        line-height: 1.65;
+        min-width: 900px;
+      }
+
+      .page-wrap {
+        max-width: 1080px;
+        margin: 48px auto;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+      }
+
+      /* ── TOP HEADER BAND ── */
+      .header-band {
+        background: var(--navy);
+        padding: 40px 52px 36px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .header-band::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 340px;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          transparent 40%,
+          rgba(200, 169, 110, 0.12) 100%
+        );
+        pointer-events: none;
+      }
+
+      .header-band::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), transparent);
+      }
+
+      .header-name h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 46px;
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: -0.5px;
+        line-height: 1.1;
+      }
+
+      .header-name .title-tag {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--accent);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 8px;
+      }
+
+      .header-contact {
+        text-align: right;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.9;
+      }
+
+      .header-contact a {
+        color: var(--accent-light);
+        text-decoration: none;
+      }
+
+      /* ── BODY LAYOUT ── */
+      .body-grid {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        background: var(--light-bg);
+      }
+
+      /* ── SIDEBAR ── */
+      .sidebar {
+        background: var(--navy-mid);
+        color: #fff;
+        padding: 36px 26px;
+      }
+
+      .sidebar-section {
+        margin-bottom: 36px;
+      }
+
+      .sidebar-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .sidebar h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(200, 169, 110, 0.3);
       }
 
       .sidebar p,
-      li {
-        font-size: 18px;
-        margin-bottom: 10px;
+      .sidebar li {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        margin-bottom: 6px;
       }
 
-      .sidebar .section {
-        margin-bottom: 40px;
+      .sidebar ul {
+        margin-left: 0;
+        list-style: none;
       }
 
-      .main-content header {
-        margin-bottom: 30px;
+      .sidebar ul li {
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 8px;
       }
 
-      .contact {
-        font-size: 14px;
-        color: #4b5563;
+      .sidebar ul li::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 11px;
+        top: 1px;
+      }
+
+      .edu-block {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .edu-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .edu-year {
+        font-size: 11px;
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+      }
+
+      .edu-inst {
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .edu-detail {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.5;
+      }
+
+      /* ── MAIN CONTENT ── */
+      .main {
+        padding: 40px 44px;
+      }
+
+      .main-section {
+        margin-bottom: 36px;
+      }
+
+      .main-section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-label {
+        font-family: "Playfair Display", serif;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 14px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--rule);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .profile-text {
+        font-size: 14.5px;
+        color: var(--text-mid);
+        line-height: 1.8;
+      }
+
+      /* Job entries */
+      .job {
+        margin-bottom: 26px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .job:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4px;
       }
 
       .job-title {
-        font-weight: bold;
-        margin-top: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--navy);
       }
 
-      .company {
-        font-style: italic;
-        color: #555;
+      .job-date {
+        font-size: 12px;
+        color: var(--text-muted);
+        white-space: nowrap;
+        margin-left: 16px;
+        padding: 2px 10px;
+        background: rgba(200, 169, 110, 0.12);
+        border-radius: 20px;
+        font-weight: 500;
+        flex-shrink: 0;
       }
 
-      .date-location {
+      .job-company {
         font-size: 13px;
-        color: #777;
-      }
-
-      ul {
-        margin-left: 20px;
-        margin-bottom: 20px;
-      }
-
-      .skills-grid {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .skills-grid div {
+        color: var(--steel);
+        font-style: italic;
         margin-bottom: 10px;
-        font-size: 14px;
-        line-height: 1.4;
       }
 
-      .bold {
-        font-weight: bold;
+      .job ul {
+        margin-left: 0;
+        list-style: none;
+        padding: 0;
+      }
+
+      .job ul li {
+        font-size: 13.5px;
+        color: var(--text-mid);
+        padding-left: 16px;
+        position: relative;
+        margin-bottom: 6px;
+        line-height: 1.6;
+      }
+
+      .job ul li::before {
+        content: "–";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: 600;
       }
 
       @media print {
         body {
           background: #fff;
         }
-
-        .resume {
+        .page-wrap {
           box-shadow: none;
-          margin: 0 auto;
+          margin: 0;
         }
-
-        .sidebar,
-        .main-content {
-          padding: 20px;
-        }
-
         @page {
           size: A4;
-          margin: 10mm;
+          margin: 8mm;
         }
       }
     </style>
   </head>
   <body>
-    <div class="resume">
-      <div class="sidebar">
-        <div class="section">
-          <h2><u>PERSONAL</u></h2>
-          <p><span class="bold">Name:</span> Linda Paul Ndlovu</p>
-          <p><span class="bold">Phone:</span> 078 731 8290</p>
-          <p><span class="bold">Email:</span> paulndlovu20@gmail.com</p>
-          <p>
-            <span class="bold">Location:</span> Pietermaritzburg, Kwa-Zulu Natal
-          </p>
-          <p><span class="bold">Nationality:</span> South African</p>
-        </div>
-
-        <div class="section">
-          <h2><u>EDUCATION & CERTIFICATIONS</u></h2>
-          <div class="skills-grid">
-            <div>
-              2023 — Udemy: SQL – MySQL for Data Analytics and Business
-              Intelligence.<br /><br />
-              Progress status: Course Completed.
-            </div>
-            <div>
-              2015 — IT Certification Academy: Information Technology (Part-time
-              study)<br /><br />
-              Credentials:<br />
-              • National Certificate Information Technology: System Support<br />
-              • Microsoft Certified Solutions Expert<br />
-              • Microsoft Certified Professional<br />
-              • Microsoft Certified Solutions Associate<br />
-              Progress status: Diploma Completed.
-            </div>
-            <div>
-              2012 – 2014 — PC Training & Business College: Information
-              Technology (Full-time study)<br /><br />
-              Relevant subjects: Networking, E-Commerce, Life Skills,
-              Information Systems, Visual Basics, Web Technology, Business
-              Communications, Java, Database Systems, Quantitative Techniques,
-              IT Project Management<br />
-              Progress status: Diploma Completed.
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2><u>KEY SKILLS</u></h2>
-          <div class="skills-grid">
-            <div>✔ Server Support & Maintenance (Windows & Linux)</div>
-            <div>✔ Firewall Configuration & Network Security</div>
-            <div>✔ SQL Database Analysis & Troubleshooting</div>
-            <div>✔ Remote Support (VPN, RDP) & Tier 2–3 Escalation</div>
-            <div>✔ JavaScript Integration (JotForm, Jira, Zapier)</div>
-            <div>✔ TCP/IP Networking & RAID Configuration</div>
-            <div>✔ Client Training, Documentation & SLA Management</div>
-          </div>
-        </div>
-
-      <div class="main-content">
-        <header>
+    <div class="page-wrap">
+      <!-- HEADER -->
+      <div class="header-band">
+        <div class="header-name">
           <h1>Linda Paul Ndlovu</h1>
-          <p class="contact">
-            Internal Developer | Pietermaritzburg, Kwa-Zulu Natal
-          </p>
-        </header>
+          <p class="title-tag">IT Systems &amp; Integration Professional</p>
+        </div>
+        <div class="header-contact">
+          <div>078 731 8290</div>
+          <div>
+            <a href="mailto:paulndlovu20@gmail.com">paulndlovu20@gmail.com</a>
+          </div>
+          <div>Pietermaritzburg, KwaZulu-Natal</div>
+          <div>South African Citizen</div>
+        </div>
+      </div>
 
-        <section>
-          <h2><u>PROFILE</u></h2>
-          <p>
-            Proactive IT professional with over a decade of experience in server
-            support, network troubleshooting, and software integration. Known
-            for learning through hands-on problem solving rather than formal
-            study—quick to adapt, experiment, and apply new tools in real-world
-            settings. While my recent roles focused heavily on integration and
-            automation, I’m actively re-engaging with core infrastructure
-            technologies like Active Directory, Office 365, and Veeam, which I
-            previously worked with earlier in my career. Backed by a strong
-            foundation in SQL troubleshooting, remote support, and
-            cross-platform diagnostics across Windows and Linux environments.
-            Recognized for clear communication, client empathy, and a
-            security-focused mindset.
-          </p>
-        </section>
+      <!-- BODY -->
+      <div class="body-grid">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <div class="sidebar-section">
+            <h3>Key Skills</h3>
+            <ul>
+              <li>Server Support &amp; Maintenance (Windows &amp; Linux)</li>
+              <li>Firewall Configuration &amp; Network Security</li>
+              <li>SQL Database Analysis &amp; Troubleshooting</li>
+              <li>Remote Support (VPN, RDP) &amp; Tier 2–3 Escalation</li>
+              <li>JavaScript Integration (JotForm, Jira, Zapier)</li>
+              <li>TCP/IP Networking &amp; RAID Configuration</li>
+              <li>Client Training, Documentation &amp; SLA Management</li>
+              <li>Active Directory &amp; Office 365 Administration</li>
+              <li>AWS Lambda &amp; Serverless Function Development</li>
+            </ul>
+          </div>
 
-        <section>
-          <br />
-          <h2><u>EMPLOYMENT HISTORY</u></h2>
+          <div class="sidebar-section">
+            <h3>Education &amp; Certifications</h3>
 
-          <p class="job-title">Internal Integration Developer</p>
-          <p class="company">Coherent Software Solutions</p>
-          <p class="date-location">Nov 2023 – Present</p>
-          <ul>
-            <li>
-              Developed JavaScript-based integrations between JotForm, Jira, and
-              Testim to automate support workflows.
-            </li>
-            <li>
-              Handled second-line technical escalations and resolved API-related
-              issues across platforms.
-            </li>
-            <li>
-              Performed remote server diagnostics and contributed to
-              infrastructure improvements.
-            </li>
-          </ul>
+            <div class="edu-block">
+              <div class="edu-year">2023</div>
+              <div class="edu-inst">Udemy</div>
+              <div class="edu-detail">
+                SQL – MySQL for Data Analytics and Business Intelligence<br /><em
+                  >Completed</em
+                >
+              </div>
+            </div>
 
-          <p class="job-title">Special Projects – POS Menu & SQL Maintenance</p>
-          <p class="date-location">Jun 2023 – Oct 2023</p>
-          <ul>
-            <li>
-              Managed menu configurations across client databases using SQL
-              scripting.
-            </li>
-            <li>
-              Optimized support response by simplifying complex menu structures.
-            </li>
-            <li>
-              Liaised directly with clients to troubleshoot and resolve POS menu
-              issues.
-            </li>
-          </ul>
+            <div class="edu-block">
+              <div class="edu-year">2015</div>
+              <div class="edu-inst">IT Certification Academy</div>
+              <div class="edu-detail">
+                Information Technology (Part-time)<br />
+                • National Certificate: System Support<br />
+                • Microsoft Certified Solutions Expert (MCSE)<br />
+                • Microsoft Certified Professional (MCP)<br />
+                • Microsoft Certified Solutions Associate (MCSA)<br />
+                <em>Diploma Completed</em>
+              </div>
+            </div>
 
-          <p class="job-title">
-            Senior Tier 3 Supervisor & Junior Software Tester
-          </p>
-          <p class="date-location">2016 – 2023</p>
-          <ul>
-            <li>
-              Oversaw escalated tickets and conducted advanced POS system
-              troubleshooting.
-            </li>
-            <li>
-              Led database repairs and audits, identifying trends and systemic
-              issues.
-            </li>
-            <li>Conducted internal training sessions for new support staff.</li>
-            <li>
-              Logged and tested software bugs, contributing to product
-              improvement and QA feedback loops.
-            </li>
-            <li>
-              Collaborated with developers to refine system features and improve
-              client experience.
-            </li>
-          </ul>
+            <div class="edu-block">
+              <div class="edu-year">2012 – 2014</div>
+              <div class="edu-inst">PC Training &amp; Business College</div>
+              <div class="edu-detail">
+                IT Diploma (Full-time)<br />
+                Networking, Java, Database Systems, E-Commerce, Web Technology,
+                IT Project Management<br />
+                <em>Diploma Completed</em>
+              </div>
+            </div>
+          </div>
+        </aside>
 
-          <p class="job-title">Help-Desk Support (Tier 1–2)</p>
-          <p class="date-location">2014 – 2016</p>
-          <ul>
-            <li>
-              Provided first-line support for hardware, software, and networking
-              issues.
-            </li>
-            <li>
-              Logged calls, diagnosed issues, and escalated to Tier 3 when
-              necessary.
-            </li>
-            <li>
-              Advised clients on hardware upgrades and performed basic server
-              maintenance.
-            </li>
-            <li>
-              Installed and supported printers, POS terminals, and desktop
-              environments.
-            </li>
-          </ul>
-        </section>
+        <!-- MAIN -->
+        <main class="main">
+          <div class="main-section">
+            <div class="section-label">Profile</div>
+            <p class="profile-text">
+              IT professional with over a decade of hands-on experience spanning
+              help-desk support, infrastructure maintenance, database
+              administration, and software integration. A self-driven learner
+              who builds knowledge through real-world problem solving, I have
+              consistently grown from first-line support into senior technical
+              and development roles — demonstrating an ability to adapt quickly
+              and deliver results across changing environments.
+              <br /><br />
+              My recent focus on integration and automation — building
+              JavaScript-based workflows between platforms like JotForm, Jira,
+              and Testim, and developing AWS Lambda functions for event-driven
+              backend processes — complements a solid foundation in Windows and
+              Linux server environments, SQL troubleshooting, TCP/IP networking,
+              and cross-platform diagnostics. I am currently re-engaging with
+              enterprise technologies including Active Directory, Office 365,
+              and Veeam Backup, areas I worked with earlier in my career and
+              continue to develop. Known for clear communication, strong client
+              empathy, and a security-conscious approach to every solution I
+              build.
+            </p>
+          </div>
+
+          <div class="main-section">
+            <div class="section-label">Employment History</div>
+
+            <div class="job">
+              <div class="job-header">
+                <span class="job-title">Internal Integration Developer</span>
+                <span class="job-date">Nov 2023 – Present</span>
+              </div>
+              <div class="job-company">Coherent Software Solutions</div>
+              <ul>
+                <li>
+                  Designed and maintained JavaScript-based integrations between
+                  JotForm, Jira, and Testim to automate and streamline support
+                  workflows.
+                </li>
+                <li>
+                  Built and deployed AWS Lambda functions to handle event-driven
+                  backend processes, reducing reliance on dedicated servers and
+                  improving system scalability.
+                </li>
+                <li>
+                  Handled second-line technical escalations, diagnosing and
+                  resolving API-related issues across multiple platforms.
+                </li>
+                <li>
+                  Performed remote server diagnostics and contributed to ongoing
+                  infrastructure improvements.
+                </li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-header">
+                <span class="job-title"
+                  >Special Projects – POS Menu &amp; SQL Maintenance</span
+                >
+                <span class="job-date">Jun 2023 – Oct 2023</span>
+              </div>
+              <div class="job-company">Coherent Software Solutions</div>
+              <ul>
+                <li>
+                  Managed and maintained menu configurations across client
+                  databases using SQL scripting.
+                </li>
+                <li>
+                  Simplified complex menu structures to improve support response
+                  times and client usability.
+                </li>
+                <li>
+                  Worked directly with clients to troubleshoot and resolve POS
+                  menu-related issues.
+                </li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-header">
+                <span class="job-title"
+                  >Senior Tier 3 Supervisor &amp; Junior Software Tester</span
+                >
+                <span class="job-date">2016 – 2023</span>
+              </div>
+              <div class="job-company">Coherent Software Solutions</div>
+              <ul>
+                <li>
+                  Managed escalated support tickets and led advanced
+                  troubleshooting of POS systems across client environments.
+                </li>
+                <li>
+                  Conducted database audits and repairs, identifying trends and
+                  systemic issues before they impacted clients.
+                </li>
+                <li>
+                  Delivered internal training sessions for new support staff,
+                  raising team technical competency.
+                </li>
+                <li>
+                  Logged and tested software bugs, contributing to QA feedback
+                  loops and product improvement cycles.
+                </li>
+                <li>
+                  Collaborated directly with developers to refine system
+                  features and enhance the client experience.
+                </li>
+              </ul>
+            </div>
+
+            <div class="job">
+              <div class="job-header">
+                <span class="job-title"
+                  >Help-Desk Support Technician (Tier 1–2)</span
+                >
+                <span class="job-date">2014 – 2016</span>
+              </div>
+              <div class="job-company">Coherent Software Solutions</div>
+              <ul>
+                <li>
+                  Delivered first-line support for hardware, software, and
+                  networking issues in a fast-paced environment.
+                </li>
+                <li>
+                  Logged, diagnosed, and escalated incidents systematically,
+                  maintaining SLA compliance.
+                </li>
+                <li>
+                  Advised clients on hardware upgrade paths and performed
+                  routine server maintenance tasks.
+                </li>
+                <li>
+                  Installed and configured printers, POS terminals, and desktop
+                  environments on-site and remotely.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   </body>
